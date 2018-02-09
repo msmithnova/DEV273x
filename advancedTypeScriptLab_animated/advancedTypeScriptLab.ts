@@ -69,7 +69,7 @@ class movingElement implements Rotater, Mover {
     moveBack: (elem: HTMLElement) => any
     rotateBack: (elem: HTMLElement) => any
     animated: false;
-
+    
     element: HTMLElement
     constructor(elem: HTMLElement) {
         elem.onmousedown = () => {
@@ -85,7 +85,7 @@ class movingElement implements Rotater, Mover {
             this.rotateBack(elem);
         }
         if (this.animated) {
-            elem.style.transition = "transform .5s ease"
+             elem.style.transition = "transform .5s ease"
         }
         this.element = elem;
     }
@@ -109,7 +109,7 @@ for (let elem of standardElements) {
     document.body.appendChild(elemClass.element);
 }
 
-function animated(constructor: Function) {
+function animated(constructor: any) {
     constructor.prototype.animated = true;
     return constructor;
  }
